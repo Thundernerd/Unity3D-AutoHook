@@ -21,7 +21,13 @@ Auto Hook is a property drawer that automagically assigns a reference to your fi
 ```
 openupm add net.tnrd.autohook
 ```
-2. You can also install via git url by adding these entries in your **manifest.json**
+
+2. Installing through a [Unity Package](http://package-installer.glitch.me/v1/installer/package.openupm.com/net.tnrd.autohook?registry=https://package.openupm.com) created by the [Package Installer Creator](https://package-installer.glitch.me) from [Needle](https://needle.tools)
+
+[<img src="https://api-lunacy.icons8.com/api/assets/74506671-1e01-48de-9acf-45e80ac56ecc/Simple Download Button.png"/>](http://package-installer.glitch.me/v1/installer/package.openupm.com/net.tnrd.autohook?registry=https://package.openupm.com)
+
+
+3. You can also install via git url by adding these entries in your **manifest.json**
 ```json
 "net.tnrd.autohook": "https://github.com/Thundernerd/Unity3D-Autohook.git"
 ```

@@ -1,7 +1,7 @@
 {
   "name": "net.tnrd.autohook",
-  "version": "1.0.0",
-  "displayName": "AutoHook",
+  "version": "1.0.1",
+  "displayName": "Auto Hook",
   "description": "A property drawer that auto assigns a reference",
   "unity": "2019.1",
   "type": "tool",
