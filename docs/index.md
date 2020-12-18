@@ -1,5 +1,3 @@
-# Auto Hook
-
 <p align="center">
 	<img alt="GitHub package.json version" src ="https://img.shields.io/github/package-json/v/Thundernerd/Unity3D-Autohook" />
 	<a href="https://github.com/Thundernerd/Unity3D-Autohook/issues">
@@ -13,8 +11,6 @@
 	</a>
 	<img alt="GitHub last commit" src ="https://img.shields.io/github/last-commit/Thundernerd/Unity3D-Autohook" />
 </p>
-
-Auto Hook is a property drawer that automagically assigns a reference to your field.
 
 ## Installation
 1. The package is available on the [openupm registry](https://openupm.com). You can install it via [openupm-cli](https://github.com/openupm/openupm-cli).
