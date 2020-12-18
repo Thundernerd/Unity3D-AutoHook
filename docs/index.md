@@ -1,37 +1,71 @@
-## Welcome to GitHub Pages
+# Auto Hook
 
-You can use the [editor on GitHub](https://github.com/Thundernerd/Unity3D-AutoHook/edit/gh-pages/docs/index.md) to maintain and preview the content for your website in Markdown files.
+<p align="center">
+	<img alt="GitHub package.json version" src ="https://img.shields.io/github/package-json/v/Thundernerd/Unity3D-Autohook" />
+	<a href="https://github.com/Thundernerd/Unity3D-Autohook/issues">
+		<img alt="GitHub issues" src ="https://img.shields.io/github/issues/Thundernerd/Unity3D-Autohook" />
+	</a>
+	<a href="https://github.com/Thundernerd/Unity3D-Autohook/pulls">
+		<img alt="GitHub pull requests" src ="https://img.shields.io/github/issues-pr/Thundernerd/Unity3D-Autohook" />
+	</a>
+	<a href="https://github.com/Thundernerd/Unity3D-Autohook/blob/master/LICENSE.md">
+		<img alt="GitHub license" src ="https://img.shields.io/github/license/Thundernerd/Unity3D-Autohook" />
+	</a>
+	<img alt="GitHub last commit" src ="https://img.shields.io/github/last-commit/Thundernerd/Unity3D-Autohook" />
+</p>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Auto Hook is a property drawer that automagically assigns a reference to your field.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## Installation
+1. The package is available on the [openupm registry](https://openupm.com). You can install it via [openupm-cli](https://github.com/openupm/openupm-cli).
+```
+openupm add net.tnrd.autohook
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+2. Installing through a [Unity Package](http://package-installer.glitch.me/v1/installer/package.openupm.com/net.tnrd.autohook?registry=https://package.openupm.com) created by the [Package Installer Creator](https://package-installer.glitch.me) from [Needle](https://needle.tools)
 
-### Jekyll Themes
+[<img src="https://img.icons8.com/ios/50/000000/download--v1.png"/>](http://package-installer.glitch.me/v1/installer/package.openupm.com/net.tnrd.autohook?registry=https://package.openupm.com)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Thundernerd/Unity3D-AutoHook/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+3. You can also install via git url by adding these entries in your **manifest.json**
+```json
+"net.tnrd.autohook": "https://github.com/Thundernerd/Unity3D-Autohook.git"
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+## Usage
+Using Auto Hook is easy. You just have to add the `[AutoHook]` attribute to any field that wants a component and it'll try to assign it.
+
+```csharp
+public class Foo : MonoBehaviour
+{
+    [SerializeField, AutoHook]
+    private Rigidbody rigidbody;
+
+    [...]
+}
+```
+
+There's some extra options that you can configure
+
+| Option              	| Description                                                                                                                                                                                                                                                                                                                                                                                                   	|
+|---------------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| SearchArea          	| **Default**<br>Matches `GetComponent`<br><br>**Parent**<br>Matches `GetComponentInParent`<br><br>**Children**<br>Matches `GetComponentInChildren`<br><br>**DirectChildrenOnly**<br>Iterates over the direct children of the current object only, ignoring itself and any children below that<br><br>**AllChildrenOnly**<br>Iterates over all children of the current object recursively, ignoring only itself 	|
+| HideWhenFound       	| Reduces the size of the property to 0 when a matching component has been found                                                                                                                                                                                                                                                                                                                                	|
+| ReadOnlyWhenFound   	| Marks the property as read-only when a matching component has been found                                                                                                                                                                                                                                                                                                                                      	|
+| StopSearchWhenFound 	| Stops calling GetComponent (or other variants) when a matching component has been found. This is useful if you have many `[AutoHook]` usages in your file                                                                                                                                                                                                                                                     	|
+
+## Support
+**Auto Hook** is originally made by [LotteMakesStuff](https://github.com/LotteMakesStuff) and can be found [here](https://gist.github.com/LotteMakesStuff/d6a9a4944fc667e557083108606b7d22). 
+ 
+ You can support **LotteMakesStuff** through her ko-fi or by becoming her Patreon
+  
+  [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A08215TT) <a href='https://www.patreon.com/bePatron?u=7061709' target='_blank'><img height='35' style='border:0px;height:46px;' src='https://c5.patreon.com/external/logo/become_a_patron_button@2x.png' border='0' alt='Become a Patron!' /></a>
+
+ 
+If you're feeling generous and you like my version then you can support **me** here
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J11GEYY)
+
+## Contributing
+Pull requests are welcomed. Please feel free to fix any issues you find, or add new features.
