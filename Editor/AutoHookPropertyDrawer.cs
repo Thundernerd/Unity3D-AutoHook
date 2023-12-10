@@ -41,7 +41,7 @@ namespace TNRD.Autohook
                 }
             }
 
-            EditorGUI.BeginDisabledGroup(autoHookAttribute.ReadOnlyWhenFound);
+            EditorGUI.BeginDisabledGroup(autoHookAttribute.ReadOnlyWhenFound && property.objectReferenceValue != null);
             EditorGUI.PropertyField(position, property, label);
             EditorGUI.EndDisabledGroup();
         }
